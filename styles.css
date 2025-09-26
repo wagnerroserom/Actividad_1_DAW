@@ -49,4 +49,52 @@ button {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+/* Se da apariencia de mover los botones hacia abajo */
+button.btn:active {
+    transform: translateY(2px);
+    filter: brightness(1.2);
+}
+
+/* Color gris claro a los botones de número */
+.num {
+    background: #b2bec3;
+    color: #2d3436;
+}
+
+/* El cero ocupa dos columnas*/
+.cero {
+    grid-column: span 2;
+}
+
+/* color amarillo a los botones de operación */
+.operador {
+    background: #f1b706;
+    color: #2d3436;
+}
+
+/* Color rojo al boton clear */
+.clear {
+    background: #d63031;
+    color: white;
+}
+
+/* Color turquesa claro para el boton igual */
+.igual {
+    background: #00cec9;
+    color: white;
+}
+
+/* Color turquesa oscuro para el boton decimal */
+.decimal {
+    background: #00b894;
+    color: white;
+}
+
+.invisible {
+    background: transparent;
+    box-shadow: none;
+    pointer-events: none;
+    visibility: hidden;
+}
+
 
