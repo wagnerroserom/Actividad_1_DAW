@@ -31,3 +31,10 @@ body {
     background: #dfe6e9;
 }
 
+.teclas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 13px;
+}
+
+
