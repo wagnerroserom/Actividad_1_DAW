@@ -18,6 +18,7 @@ body {
     width: 277px;
 }
 
+/* Tamaño y apariencia a la pantalla */
 #pantalla {
     width: 100%;
     height: 60px;
@@ -31,10 +32,21 @@ body {
     background: #dfe6e9;
 }
 
+/* Organizamos los botones en columnas de cuatro */
 .teclas {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 13px;
+}
+
+/* Estilos generales para los botones */
+button {
+    height: 60px;
+    font-size: 1.2rem;
+    border-radius: 13px;
+    border: none;cursor: pointer;
+    transition: 0.13s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 
