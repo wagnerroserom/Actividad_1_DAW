@@ -10,7 +10,18 @@
     <div class="calculadora" role="application" aria-label="Calculadora">
         <!-- Pantalla en la que se mostrarán lo snúmeros y resultados-->
         <input id="pantalla" aria-label="Pantalla de la calculadora" type="text" disabled>
-        
+
+        <!-- Teclado con grid -->
+        <div class="teclas">
+
+            <!-- Fila de botones 1 -->
+            <button class="btn clear" onclick="limpiar()" title="Limpiar" (C)>C</button>
+            <button class="btn operador" onclick="borrarUltimo()" title="Borrar Ultimo(⌫)">⌫</button>
+            <button class="btn operador" onclick="agregar('/')" title="Dividir">÷</button>
+            <button class="btn operador" onclick="agregar('*')" title="Multiplicar">x</button>
+
+            
+        </div>
     </div>
 </body>
 </html>
