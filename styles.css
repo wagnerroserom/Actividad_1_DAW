@@ -8,3 +8,12 @@ body {
     background: linear-gradient(180deg, #9d27f7 0%, #c25ffb 100%);
     font-family: "Segoe UI", Roboto, Arial, sans-serif;
 }
+
+/* Contenedor principal */
+.calculadora {
+    background: #2d3436;
+    padding: 20px;
+    border-radius: 13px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.48);
+    width: 277;
+}
