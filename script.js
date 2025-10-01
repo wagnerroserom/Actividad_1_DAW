@@ -18,7 +18,7 @@ function agregar(valor) {
             pantalla.value += valor;
         }
     } else {
-        // No permite dos operadores
+        // No permite dos operadores a la vez
         const ultimo = pantalla.value.slice(-1);
         if (operadores.includes(valor) && !operadores.includes(ultimo) && pantalla.value !== "") {
 
@@ -26,5 +26,46 @@ function agregar(valor) {
     }
 }
 
+// Vacea completamente la pantalla
+function limpiar() {
+    pantalla.value = "";
+}
 
+// Elimina el último carácter escrito en pantalla
+function borrarUltimo() {
+    pantalla.value = pantalla.value.slice(0, -1);
+}
 
+// Define la expresión con lo que haya en pantalla si está vacía, no hace nada
+function calcular() {
+    try {
+        let expresión = pantalla.value;
+
+        if (!expresión) return;
+
+        // Revisa que sólo contenga dígitos y operadores
+        if (/[^0-9+\-*/().% ]/.test(expresión)) {
+            alert("La expresión contiene carácteres no permitidos.");
+            return;
+        }
+
+        // Evitamos la división por cero
+        if (/\/0(?![\d\.])/.test(expresión)) {
+            alert("Error: División por cero");
+            return;
+        }
+
+        // Reemplaza cantidades por porcentajes
+        expresión = expresión.replace(/(\d+(\.\d+)?)%/g, "($1/100)");
+        expresión = expresión.replace(/\)%/g, ")/100");
+
+        // Evalua la expresión y guarda el resultado
+        const resultado = eval(expresión);
+
+        //Muestra el resultado en pantalla
+        pantalla.value = resultado.toString();
+    } catch (e) {
+        console.error(e);
+        alert("Operación no válida";)
+    }
+}
