@@ -3,3 +3,8 @@ const pantalla = document.getElementById("pantalla");
 const MAX_DIGITOS = 8;
 
 // FUNCIONES DE LA CALCULADORA
+
+function agregar(valor) {
+    const operadores = "+-*/%";
+    
+}
