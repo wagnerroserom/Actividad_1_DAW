@@ -50,3 +50,43 @@ button {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+/* Se le da apariencia de mover los botones hacia abajo al ser presionados */
+button.btn:active {
+    transform: translateY(2px);
+    filter: brightness(1.2);
+}
+
+/* Color gris claro a los botones de número */
+.num {
+    background: #b2bec3;
+    color: #2d3436;
+}
+
+/* El cero ocupará dos columnas */
+.cero {
+    grid-column: span 2;
+}
+
+/* Los botones de operación serán de color amarillo */
+.operador {
+    background: #f1b706;
+    color: #2d3436;
+}
+
+/* El botón limpiar "clear" será de color rojo */
+.clear {
+    background: #d63031;
+    color: #2d3436;
+}
+
+/* El botón igual será de color turquesa claro */
+.igual {
+    background: #00cec9;
+    color: white;
+}
+
+/* El color del botón para decimal será de color lila */
+.decimal {
+    background: #bc57f7;
+    color: white;
+}
