@@ -32,3 +32,21 @@ body {
     background: #dfe6e9;
 }
 
+/* Se organizan los botones en columnas de cuatro */
+.teclas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 13px;
+}
+
+/* Estilos generales para los botones */
+button {
+    height: 60px;
+    border-radius: 13px;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.13s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
