@@ -66,6 +66,34 @@ function calcular() {
         pantalla.value = resultado.toString();
     } catch (e) {
         console.error(e);
-        alert("Operación no válida";)
+        alert("Operación no válida");
     }
 }
+
+// Se agrega un "escuchador" para detectar cuando se presiona una tecla
+document.addEventListener("keydown", (event) => {
+    const key = event.key;
+
+    // Si es un operador, decimal o núemro, procesa la tecla
+    if ("0123456789+-*/.%".includes(key)) {
+        event.preventDefault();
+        agregar(key);
+    }
+
+    // Si se presiona Enter se realiza el cálculo
+    else if (key === "Enter") {
+        event.preventDefault();
+        calcular();
+    }
+
+    // Tecla Backspace, borra el último dígito ingresado
+    else if (key === "Backspace") {
+        event.preventDefault();
+        borrarUltimo();
+    }
+
+    //Tecla C limpia la pantalla
+    else if (key.toLowerCase() === "c") {
+        limpiar();
+    }
+});
