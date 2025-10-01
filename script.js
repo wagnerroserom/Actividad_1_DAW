@@ -1,6 +1,7 @@
 // Se conecta JS con la pantalla y se establece máximo de dígitos
-const pantalla = document.getElementById("pantalla");
-const MAX_DIGITOS = 8;
+    const pantalla = document.getElementById("pantalla");
+    const MAX_DIGITOS = 8;
+
 
 // FUNCIONES DE LA CALCULADORA
 
@@ -11,17 +12,17 @@ function agregar(valor) {
     if ("0123456789.".includes(valor)) {
         // Divide la expresión en pantalla en partes separadas por operadores
         const partes = pantalla.value.split(/[\+\-\*\/%]/);
-        const ultimoNumero = partes[partes.length -1];
+        const ultimoNumero = partes[partes.length - 1];
 
         // Permite agregar un último número si no excede el máximo permitido
         if (ultimoNumero.length < MAX_DIGITOS) {
-            pantalla.value += valor;
+            pantalla.value += valor
         }
     } else {
         // No permite dos operadores a la vez
         const ultimo = pantalla.value.slice(-1);
         if (operadores.includes(valor) && !operadores.includes(ultimo) && pantalla.value !== "") {
-
+            pantalla.value += valor;
         }
     }
 }
@@ -39,28 +40,28 @@ function borrarUltimo() {
 // Define la expresión con lo que haya en pantalla si está vacía, no hace nada
 function calcular() {
     try {
-        let expresión = pantalla.value;
+        let expresion = pantalla.value;
 
-        if (!expresión) return;
+        if (!expresion) return;
 
         // Revisa que sólo contenga dígitos y operadores
-        if (/[^0-9+\-*/().% ]/.test(expresión)) {
+        if (/[^0-9+\-*/().% ]/.test(expresion)) {
             alert("La expresión contiene carácteres no permitidos.");
             return;
         }
 
         // Evitamos la división por cero
-        if (/\/0(?![\d\.])/.test(expresión)) {
+        if (/\/0(?![\d\.])/.test(expresion)) {
             alert("Error: División por cero");
             return;
         }
 
         // Reemplaza cantidades por porcentajes
-        expresión = expresión.replace(/(\d+(\.\d+)?)%/g, "($1/100)");
-        expresión = expresión.replace(/\)%/g, ")/100");
+        expresion = expresion.replace(/(\d+(\.\d+)?)%/g, "($1/100)");
+        expresion = expresion.replace(/\)%/g, ")/100");
 
         // Evalua la expresión y guarda el resultado
-        const resultado = eval(expresión);
+        const resultado = eval(expresion);
 
         //Muestra el resultado en pantalla
         pantalla.value = resultado.toString();
