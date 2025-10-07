@@ -5,7 +5,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(180deg, #9d27f7 0%, #c25ffb 100%);
+    background: linear-gradient(180deg, #aafb9a 0%, #71fb16 100%);
     font-family: "Segoe UI", Roboto, Arial, sans-serif;
 }
 
@@ -87,6 +87,6 @@ button.btn:active {
 
 /* El color del botón para decimal será de color lila */
 .decimal {
-    background: #bc57f7;
+    background: #e612f5;
     color: white;
 }
